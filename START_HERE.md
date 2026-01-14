@@ -7,7 +7,7 @@ Welcome! This is your complete, standalone **Agentic Problem Solver** extracted 
 ### 1. Setup Environment
 ```bash
 cp .env.example .env
-# Edit .env and add your OpenAI API key
+# Edit .env and add your Google Gemini API key
 ```
 
 ### 2. Install Dependencies
@@ -150,7 +150,7 @@ asyncio.run(main())
 
 Edit **.env**:
 ```bash
-OPENAI_API_KEY=sk-your-key-here      # Your API key
+GEMINI_API_KEY=AIzaSy...      # Your Gemini API key
 LLM_MODEL=gpt-4-turbo                 # Model to use
 API_PORT=8000                         # Server port
 MAX_SOLVE_STEPS=5                     # Solution steps
@@ -175,7 +175,7 @@ See **GUIDE.md** for all options.
 ```bash
 docker build -t agentic-solver .
 docker run -p 8000:8000 \
-  -e OPENAI_API_KEY=sk-... \
+  -e GEMINI_API_KEY=AIzaSy... \
   agentic-solver
 ```
 

@@ -124,7 +124,7 @@ agentic-problem-solver/
 ```bash
 cd ~/Desktop/agentic-problem-solver
 cp .env.example .env
-# Edit .env with your OpenAI API key
+# Edit .env with your Google Gemini API key
 pip install -r requirements.txt
 ```
 
@@ -307,7 +307,7 @@ Output: Step-by-step balancing process
 ### Immediate (Get Running)
 1. ✅ Open terminal in `agentic-problem-solver` directory
 2. ✅ Copy `.env.example` to `.env`
-3. ✅ Add your OpenAI API key to `.env`
+3. ✅ Add your Google Gemini API key to `.env`
 4. ✅ Run: `python run_server.py`
 5. ✅ Test: Visit `http://localhost:8000`
 

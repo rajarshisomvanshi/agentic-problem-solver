@@ -190,9 +190,15 @@ agentic-problem-solver/
 ### Environment Variables (.env)
 
 ```bash
+<<<<<<< HEAD
 # Gemini API
 Gemini_API_KEY=sk-...
 Gemini_BASE_URL=https://api.Gemini.com/v1
+=======
+# OpenAI API
+GEMINI_API_KEY=AIzaSy...
+OPENAI_BASE_URL=https://api.openai.com/v1
+>>>>>>> f4a87e1 (Update: Gemini API keys, strict content restrictions, and UI layout fixes)
 LLM_MODEL=gpt-4-turbo
 
 # Server
@@ -289,9 +295,15 @@ Solutions are saved in two formats:
 
 ## 🔧 Troubleshooting
 
+<<<<<<< HEAD
 ### "Gemini_API_KEY not provided"
 - Ensure `.env` file exists with valid API key
 - Run: `export Gemini_API_KEY=sk-...`
+=======
+### "GEMINI_API_KEY not provided"
+- Ensure `.env` file exists with valid API key
+- Run: `export GEMINI_API_KEY=AIzaSy...`
+>>>>>>> f4a87e1 (Update: Gemini API keys, strict content restrictions, and UI layout fixes)
 
 ### Server won't start
 - Check if port 8000 is available

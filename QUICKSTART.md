@@ -14,8 +14,8 @@ cd ~/Desktop/agentic-problem-solver
 # Copy template
 cp .env.example .env
 
-# Edit .env with your OpenAI API key
-# Open .env and replace: OPENAI_API_KEY=your-api-key-here
+# Edit .env with your Google Gemini API key
+# Open .env and replace: GEMINI_API_KEY=your-api-key-here
 ```
 
 ### Install Dependencies
