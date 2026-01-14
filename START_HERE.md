@@ -7,7 +7,7 @@ Welcome! This is your complete, standalone **Agentic Problem Solver** extracted 
 ### 1. Setup Environment
 ```bash
 cp .env.example .env
-# Edit .env and add your OpenAI API key
+# Edit .env and add your Google Gemini API key
 ```
 
 ### 2. Install Dependencies

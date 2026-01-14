@@ -42,7 +42,7 @@ source venv/bin/activate
 # Copy template
 cp .env.example .env
 
-# Edit .env file - Add your OpenAI API key
+# Edit .env file - Add your Google Gemini API key
 # On Windows:
 notepad .env
 
