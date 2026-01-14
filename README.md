@@ -30,7 +30,7 @@ User Input (Problem/Question)
 ### Components
 
 - **Backend**: FastAPI + async Python for real-time problem solving
-- **LLM Integration**: OpenAI GPT-4 Turbo for intelligent reasoning
+- **LLM Integration**: Gemini GPT-4 Turbo for intelligent reasoning
 - **WebSocket**: Real-time progress streaming to frontend
 - **Memory System**: Persistent solve-chain storage (JSON)
 - **Configuration**: YAML-based config + environment variables
@@ -41,7 +41,7 @@ User Input (Problem/Question)
 ### Prerequisites
 
 - Python 3.10+
-- OpenAI API key
+- Gemini API key
 - Node.js 18+ (for frontend, optional)
 
 ### Installation
@@ -56,7 +56,7 @@ cd ~/Desktop
 ```bash
 cd agentic-problem-solver
 cp .env.example .env
-# Edit .env with your OpenAI API key
+# Edit .env with your Gemini API key
 ```
 
 3. **Install dependencies**:
@@ -190,9 +190,9 @@ agentic-problem-solver/
 ### Environment Variables (.env)
 
 ```bash
-# OpenAI API
-OPENAI_API_KEY=sk-...
-OPENAI_BASE_URL=https://api.openai.com/v1
+# Gemini API
+Gemini_API_KEY=sk-...
+Gemini_BASE_URL=https://api.Gemini.com/v1
 LLM_MODEL=gpt-4-turbo
 
 # Server
@@ -289,9 +289,9 @@ Solutions are saved in two formats:
 
 ## 🔧 Troubleshooting
 
-### "OPENAI_API_KEY not provided"
+### "Gemini_API_KEY not provided"
 - Ensure `.env` file exists with valid API key
-- Run: `export OPENAI_API_KEY=sk-...`
+- Run: `export Gemini_API_KEY=sk-...`
 
 ### Server won't start
 - Check if port 8000 is available
@@ -367,7 +367,7 @@ pm2 start run_server.py
 
 - **fastapi**: Web framework
 - **uvicorn**: ASGI server
-- **openai**: LLM API client
+- **Gemini**: LLM API client
 - **pydantic**: Data validation
 - **PyYAML**: Configuration management
 - **python-dotenv**: Environment variables
