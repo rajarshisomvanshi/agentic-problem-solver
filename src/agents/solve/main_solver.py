@@ -106,12 +106,15 @@ class MainSolver:
                 )
 
                 # Generate step content using LLM
-                step_content = await self._generate_step_content(
-                    question=question,
-                    step=step,
-                    previous_steps=solve_memory.solve_chains[:idx-1],
-                    files=files
-                )
+                if step.step_id == "REFUSAL":
+                    step_content = "I apologize, but I am restricted to answering only academic and study-related questions. I cannot assist with this request."
+                else:
+                    step_content = await self._generate_step_content(
+                        question=question,
+                        step=step,
+                        previous_steps=solve_memory.solve_chains[:idx-1],
+                        files=files
+                    )
 
                 step.update_response(step_content)
                 solve_memory.save()
@@ -160,8 +163,26 @@ class MainSolver:
         """Plan solution steps using LLM"""
         from src.services.llm import call_llm
 
-        system_prompt = """You are an expert problem solver. Break down the problem into clear, logical steps.
-For each step, provide a brief description of what needs to be done.
+        system_prompt = """You are an expert problem solver specialized in ACADEMIC and STUDY-RELATED topics.
+Your goal is to break down the problem into logical steps ONLY IF it is related to:
+- Mathematics, Science, Engineering, Technology
+- Programming, Coding, Software Development
+- Academic subjects (History, Geography, Literature, etc.)
+- Study skills, exam preparation, educational guidance
+
+STRICTLY REFUSE to answer questions about:
+- Dating, relationships, social skills (e.g., "how to impress a girl")
+- Entertainment, celebrities, gossip
+- Personal life advice unrelated to studies
+- Anything clearly outside the scope of education and learning
+
+If the user question is NON-ACADEMIC:
+Return a JSON array with a SINGLE step explaining the refusal:
+[
+  {"step_id": "REFUSAL", "step_target": "Explain that I can only help with academic and study-related questions."}
+]
+
+If the question is ACADEMIC:
 Return a JSON array of steps with this format:
 [
   {"step_id": "s001", "step_target": "Step description 1"},

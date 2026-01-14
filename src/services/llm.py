@@ -27,9 +27,7 @@ class LLMConfig:
 def get_llm_config() -> LLMConfig:
     """Get LLM config from environment"""
     api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        # Fallback to check for OpenAI key just in case, or raise error
-        api_key = os.getenv("OPENAI_API_KEY")
+
 
     if not api_key:
         raise ValueError("GEMINI_API_KEY environment variable not set")

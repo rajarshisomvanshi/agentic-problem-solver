@@ -191,7 +191,7 @@ agentic-problem-solver/
 
 ```bash
 # OpenAI API
-OPENAI_API_KEY=sk-...
+GEMINI_API_KEY=AIzaSy...
 OPENAI_BASE_URL=https://api.openai.com/v1
 LLM_MODEL=gpt-4-turbo
 
@@ -289,9 +289,9 @@ Solutions are saved in two formats:
 
 ## 🔧 Troubleshooting
 
-### "OPENAI_API_KEY not provided"
+### "GEMINI_API_KEY not provided"
 - Ensure `.env` file exists with valid API key
-- Run: `export OPENAI_API_KEY=sk-...`
+- Run: `export GEMINI_API_KEY=AIzaSy...`
 
 ### Server won't start
 - Check if port 8000 is available

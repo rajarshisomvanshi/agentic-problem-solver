@@ -52,7 +52,7 @@ nano .env
 
 **Required fields in .env**:
 ```
-OPENAI_API_KEY=sk-your-actual-key-here
+GEMINI_API_KEY=AIzaSy...
 OPENAI_BASE_URL=https://api.openai.com/v1
 LLM_MODEL=gpt-4-turbo
 ```
@@ -125,7 +125,7 @@ uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 ```bash
 docker build -t agentic-solver .
 docker run -p 8000:8000 \
-  -e OPENAI_API_KEY=sk-... \
+  -e GEMINI_API_KEY=AIzaSy... \
   agentic-solver
 ```
 
@@ -141,7 +141,7 @@ docker-compose up --build
 
 ```bash
 # LLM Settings
-OPENAI_API_KEY=sk-...
+GEMINI_API_KEY=AIzaSy...
 LLM_MODEL=gpt-4-turbo
 LLM_TEMPERATURE=0.7
 LLM_MAX_TOKENS=4000
@@ -218,7 +218,7 @@ pip install --upgrade -r requirements.txt
 python -c "import sys; print(sys.path)"
 ```
 
-### Problem: "OPENAI_API_KEY not found"
+### Problem: "GEMINI_API_KEY not found"
 
 **Solution**:
 ```bash
@@ -229,7 +229,7 @@ ls -la .env  # or dir .env on Windows
 cat .env
 
 # Ensure key is set (no trailing spaces)
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxx  # No comments after key
+GEMINI_API_KEY=AIzaSy...  # No comments after key
 ```
 
 ### Problem: "Port 8000 already in use"

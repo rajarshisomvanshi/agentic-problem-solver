@@ -8,7 +8,7 @@ Complete guide to configuring and customizing Agentic Problem Solver.
 
 ```bash
 # Critical (required)
-OPENAI_API_KEY=sk-your-key-here              # OpenAI API key
+GEMINI_API_KEY=AIzaSy...              # Gemini API key
 
 # API Server
 OPENAI_BASE_URL=https://api.openai.com/v1   # LLM endpoint
@@ -250,7 +250,7 @@ system:
 
 ```bash
 # .env
-OPENAI_API_KEY=not-needed
+GEMINI_API_KEY=not-needed
 OPENAI_BASE_URL=http://localhost:11434/v1
 LLM_MODEL=llama2:13b
 ```
@@ -259,7 +259,7 @@ LLM_MODEL=llama2:13b
 
 ```bash
 # .env
-OPENAI_API_KEY=your-azure-key
+GEMINI_API_KEY=your-gemini-key
 OPENAI_BASE_URL=https://your-resource.openai.azure.com/v1
 LLM_MODEL=gpt-4
 ```
@@ -415,7 +415,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-required = ['OPENAI_API_KEY', 'OPENAI_BASE_URL', 'LLM_MODEL']
+required = ['GEMINI_API_KEY', 'LLM_MODEL']
 for key in required:
     if not os.getenv(key):
         print(f'Missing: {key}')
@@ -437,7 +437,7 @@ python -c "import yaml; yaml.safe_load(open('config/main.yaml'))"
 cat .env
 
 # Verify environment loaded
-python -c "import os; from dotenv import load_dotenv; load_dotenv(); print(os.getenv('OPENAI_API_KEY'))"
+python -c "import os; from dotenv import load_dotenv; load_dotenv(); print(os.getenv('GEMINI_API_KEY'))"
 ```
 
 ### Problem: "Wrong LLM settings being used"
