@@ -1,0 +1,53 @@
+system:
+  language: "en"
+  output_base_dir: "./data/user/solve"
+  max_output_tokens: 10000
+
+solve:
+  max_steps: 5
+  max_retries: 2
+  timeout: 300
+  save_intermediate_results: true
+  
+  agents:
+    manager_agent:
+      temperature: 0.4
+      max_tokens: 4000
+      description: "Plans solution steps"
+    
+    solve_agent:
+      temperature: 0.7
+      max_tokens: 8192
+      description: "Executes each step"
+    
+    response_agent:
+      temperature: 0.5
+      max_tokens: 4096
+      description: "Formats final response"
+
+llm:
+  model: "gemini-1.5-flash"
+  temperature: 0.7
+  max_tokens: 4000
+  timeout: 120
+  top_p: 0.9
+  frequency_penalty: 0
+  presence_penalty: 0
+
+logging:
+  level: "INFO"
+  log_dir: "./data/user/logs"
+  console_output: true
+  save_to_file: true
+  format: "[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  log_level: "info"
+
+paths:
+  solve_output_dir: "./data/user/solve"
+  user_log_dir: "./data/user/logs"
+  config_dir: "./config"
